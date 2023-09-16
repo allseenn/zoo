@@ -4,7 +4,7 @@ LABEL maintainer="Romashin Rostislav"
 LABEL hostname="strogino"
 
 RUN apt-get update && \
-    apt-get install -y openssh-server && \
+    apt-get install -y openssh-server vim git && \
     mkdir /var/run/sshd && \
     chmod 755 /var/run/sshd && \ 
     rm -rf /var/lib/apt/lists/*     

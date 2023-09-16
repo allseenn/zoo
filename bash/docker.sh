@@ -25,7 +25,4 @@ fi
 # Развертываем службы из docker-compose.yml с указанным именем стека
 docker stack deploy -c docker-compose.yml "$stack_name"
 
-# Обновляем службу с указанным именем стека для настройки перезапуска
-docker service update --restart-condition unless-stopped "$stack_name"
-
 echo "Служба '$stack_name' была развернута в Docker Swarm и настроена на перезапуск, кроме случаев явной остановки."

@@ -7,6 +7,7 @@ services:
     volumes:
       - ../../zoo:/root/zoo
       - ../../mysql:/var/lib/mysql
+      - ~/.git-credentials:/root/.git-credentials
     ports:
       - "3306:3306"
       - "222:22"
