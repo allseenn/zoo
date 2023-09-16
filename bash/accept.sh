@@ -12,11 +12,13 @@ else
     USERNAME=$(cat ~/.git-credentials | awk -F":" '{ print $2}' | sed  's/\///g')
 fi
 
-curl -L \
+ID = $(curl -L \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer $PAT" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/user/repository_invitations
+  https://api.github.com/user/repository_invitations | grep id | head -1)
+
+echo $ID
 
 # curl -L \
 #   -X PATCH \
