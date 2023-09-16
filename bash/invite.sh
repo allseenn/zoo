@@ -1,14 +1,15 @@
 #!/bin/bash
-# Скрипт приклашения юзера в команду
+# Скрипт приглашения юзера в команду по работе на данных репозиторием (pwd)
 
 REPONAME=$(basename "$PWD")
+COLLABNAME=$1
 
-if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ]; then
-    echo "Формат ввода: create.sh [username]"
+if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ] || [ "$*" == "" ]; then
+    echo "Формат ввода: invite.sh collaborator [username]"
     exit 1;
 fi
 
-if [ $# -ge 1 ]; then
+if [ $# -ge 2 ]; then
     USERNAME=$2
     PAT=$(cat ~/.git-credentials | grep "$USERNAME" | awk -F":" '{ print $3}' | sed 's/@github.com//')
 else
@@ -21,15 +22,14 @@ fi
 curl -X PUT \
 -H "Accept: application/vnd.github+json" \
 -H "Authorization: Bearer $PAT" \
-"https://api.github.com/repos/$USERNAME/$REPONAME/branches/main/protection" \
+"https://api.github.com/repos/$USERNAME/$REPONAME/collaborators/$COLLABNAME" \
 -d '{"permission":"write"}'
 
 # Настройка защиты ветки "main"
 curl -L -X PUT \
 -H "Accept: application/vnd.github+json" \
--H "Authorization: Bearer $PAT_Beta" \
-"$REPO_URL/branches/main/protection" \
+-H "Authorization: Bearer $PAT" \
+"https://api.github.com/repos/$USERNAME/$REPONAME/branches/main/protection" \
 -H "X-GitHub-Api-Version: 2022-11-28" \
 -d '{"required_status_checks":null,"enforce_admins":null,"required_pull_request_reviews":{"required_approving_review_count":1},"restrictions":null}'
 
-echo "Пользователь $1 был добавлен как коллаборатор с разрешением на запись к репозиторию и настройки защиты ветки 'main' были установлены."

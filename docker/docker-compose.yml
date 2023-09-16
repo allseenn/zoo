@@ -1,8 +1,8 @@
 version: '3.8'
 
 services:
-  ubuntu-2204:
-    image: ubuntu:22.04
+  strogino:
+    build: .
     volumes:
       - ./zoo:/root/zoo
       - ./mysql:/var/lib/mysql

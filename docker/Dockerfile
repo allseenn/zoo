@@ -1,5 +1,8 @@
 FROM ubuntu:22.04
 
+LABEL maintainer="Romashin Rostislav"
+LABEL hostname="strogino"
+
 RUN apt-get update && \
     apt-get install -y openssh-server && \
     mkdir /var/run/sshd && \
