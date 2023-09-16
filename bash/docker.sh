@@ -1,5 +1,4 @@
 #!/bin/bash
-
 # Проверка наличия аргументов (имя стека и advertise-addr)
 if [ $# -ne 2 ]; then
   echo "Использование: $0 <имя_стека> <advertise-addr>"

@@ -4,8 +4,8 @@ services:
   strogino:
     build: .
     volumes:
-      - ./zoo:/root/zoo
-      - ./mysql:/var/lib/mysql
+      - ../../zoo:/root/zoo
+      - ../../mysql:/var/lib/mysql
     ports:
       - "3306:3306"
       - "222:22"
