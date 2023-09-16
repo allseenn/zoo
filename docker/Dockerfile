@@ -17,7 +17,7 @@ RUN echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config && \
 RUN echo "root:Test123" | chpasswd
 
 EXPOSE 3306:3306
-EXPOSE 80
+EXPOSE 22
 
-CMD ["/bin/sh", "-c", "/usr/sbin/start.sh"]
+CMD ["/usr/sbin/sshd", "-D"]
 
