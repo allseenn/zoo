@@ -13,7 +13,9 @@ advertise_addr="$2"
 
 # Перейдем в каталог с Docker Compose файлом
 cd "$(dirname "$0")/../docker/"
-docker build -t $stack_name:ssh
+
+docker build -t strogino:ssh -f Dockerfile .
+
 
 # Инициализируем Docker Swarm с указанным advertise-addr (если еще не инициализирован)
 if ! docker info | grep -q "Swarm: active"; then
