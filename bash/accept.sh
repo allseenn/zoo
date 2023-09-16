@@ -16,7 +16,7 @@ ID=$(curl -L \
   -H "Accept: application/vnd.github+json" \
   -H "Authorization: Bearer $PAT" \
   -H "X-GitHub-Api-Version: 2022-11-28" \
-  https://api.github.com/user/repository_invitations | grep id | head -1 | awk '{ print $2 }' | sed -i 's/,//')
+  https://api.github.com/user/repository_invitations | grep id | head -1 | awk '{ print $2 }' | sed 's/,//')
 
 echo "$ID"
 
