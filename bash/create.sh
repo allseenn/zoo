@@ -29,7 +29,7 @@ fi
 curl -L -H "Authorization: Bearer $PAT" \
 -H "Accept: application/vnd.github+json" \
 -H "X-GitHub-Api-Version: 2022-11-28" \
--d "{'name':$REPONAME,'private':false}" \
+-d "{\"name\":\"$REPONAME\",\"private\":false}" \
 https://api.github.com/user/repos 
 
 git init
