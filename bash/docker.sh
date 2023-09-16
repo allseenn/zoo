@@ -11,13 +11,13 @@ stack_name="$1"
 # Адрес advertise передается в аргументе $2
 advertise_addr="$2"
 
-# Перейдем в каталог с Docker Compose файлом
-cd "$(dirname "$0")/../docker/"
-
 # Инициализируем Docker Swarm с указанным advertise-addr (если еще не инициализирован)
 if ! docker info | grep -q "Swarm: active"; then
     docker swarm init --advertise-addr "$advertise_addr"
 fi
+
+# Перейдем в каталог с Docker Compose файлом
+cd "$(dirname "$0")/../docker/"
 
 # Развертываем службы из docker-compose.yml с указанным именем стека
 docker stack deploy -c docker-compose.yml "$stack_name"
