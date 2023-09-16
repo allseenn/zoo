@@ -26,3 +26,4 @@ curl -L \
   https://api.github.com/user/repository_invitations/$ID
 
 git checkout -b dev
+git push -u origin dev
