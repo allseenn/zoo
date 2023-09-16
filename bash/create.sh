@@ -15,12 +15,14 @@
 
 REPONAME=$(basename "$PWD")
 
+if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ]; then
+    echo "Формат ввода: create.sh [username]"
+    exit 1;
+fi
+
 if [ $# -ge 1 ]; then
     USERNAME=$2
     PAT=$(cat ~/.git-credentials | grep "$USERNAME" | awk -F":" '{ print $3}' | sed 's/@github.com//')
-elif [ "$1" == "-help" ] || [ "$1" == "help" ]; then
-    echo "Формат ввода: create.sh [username]"
-    exit 1;
 else
     PAT=$(cat ~/.git-credentials | awk -F":" '{ print $3}' | sed 's/@github.com//')
     USERNAME=$(cat ~/.git-credentials | awk -F":" '{ print $2}' | sed  's/\///g')
