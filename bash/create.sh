@@ -18,7 +18,7 @@ REPONAME=$(basename "$PWD")
 if [ $# -ge 1 ]; then
     USERNAME=$2
     PAT=$(cat ~/.git-credentials | grep $USERNAME | awk -F":" '{ print $3}' | sed 's/@github.com//')
-elif [ "$1" == "-help" ] || [ "$1" -eq "help" ]; then
+elif [ "$1" == "-help" ] || [ "$1" == "help" ]; then
     echo "Формат ввода: create.sh [username]"
     exit 1;
 else
