@@ -2,10 +2,8 @@ version: '3.9'
 
 services:
   strogino:
+    image: strogino:ssh
     hostname: strogino
-    build:
-      context: .
-      dockerfile: Dockerfile
     volumes:
       - ../../zoo:/root/zoo
       - ../../mysql:/var/lib/mysql
