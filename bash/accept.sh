@@ -18,11 +18,9 @@ ID=$(curl -L \
   -H "X-GitHub-Api-Version: 2022-11-28" \
   https://api.github.com/user/repository_invitations | grep id | head -1 | awk '{ print $2 }' | sed 's/,//')
 
-echo "$ID"
-
-# curl -L \
-#   -X PATCH \
-#   -H "Accept: application/vnd.github+json" \
-#   -H "Authorization: Bearer <PAT>" \
-#   -H "X-GitHub-Api-Version: 2022-11-28" \
-#   https://api.github.com/user/repository_invitations/232323096
+curl -L \
+  -X PATCH \
+  -H "Accept: application/vnd.github+json" \
+  -H "Authorization: Bearer <PAT>" \
+  -H "X-GitHub-Api-Version: 2022-11-28" \
+  https://api.github.com/user/repository_invitations/$ID
