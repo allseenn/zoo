@@ -2,6 +2,7 @@ version: '3.9'
 
 services:
   strogino:
+    hostname: strogino
     build:
       context: .
       dockerfile: Dockerfile
