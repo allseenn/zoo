@@ -1,7 +1,7 @@
 REPONAME=$(basename "$PWD")
 
 if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ]; then
-    echo "Формат ввода: issue_read.sh [username]"
+    echo "Формат ввода: pull_read.sh [username]"
     exit 1;
 fi
 
@@ -13,9 +13,8 @@ else
     USERNAME=$(cat ~/.git-credentials | awk -F":" '{ print $2}' | sed  's/\///g')
 fi
 
-curl -X GET \
- -H "Accept: application/vnd.github+json" \
- -H "Authorization: Bearer $PAT" \
- "https://api.github.com/repos/allseenn/$REPONAME/issues" \
- -d "{\"state\":\"open\",\"assignee\":\"$USERNAME\"}"
- 
+curl -L -X GET \
+-H "Accept: application/vnd.github+json" \
+-H "Authorization: Bearer $PAT" \
+-H "X-GitHub-Api-Version: 2022-11-28" \
+https://api.github.com/repos/allseenn/$REPONAME/pulls
