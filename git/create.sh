@@ -21,7 +21,7 @@ if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h"
 fi
 
 if [ $# -ge 1 ]; then
-    USERNAME=$2
+    USERNAME=$1
     PAT=$(cat ~/.git-credentials | grep "$USERNAME" | awk -F":" '{ print $3}' | sed 's/@github.com//')
 else
     PAT=$(cat ~/.git-credentials | awk -F":" '{ print $3}' | sed 's/@github.com//')

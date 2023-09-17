@@ -35,12 +35,12 @@
 ```
 mkdir zoo
 cd zoo
-./bash/create.sh zoo
+./git/create.sh zoo
 ```
 Далее тимлид приглашает разработчика в команду запустив скрипт из локальной репы
 
 ```
-./bash/invite.sh strogino
+./git/invite.sh strogino
 ```
 После поднятия убунты в докере ей будет управлять strogino, который будет принимать и отправлять пулл-request.
 Поэтому, создадим конфигурационные файлы гита, которые будут проброшены в контейнер, в них введем по запросу данные гитхаба для разработчика
@@ -48,7 +48,7 @@ cd zoo
 ```
 cd
 git clone https://github.com/allseenn/zoo.git
-./zoo/bash/gitconfig.sh
+./zoo/git/gitconfig.sh
 ```
 
 ## docker
@@ -71,7 +71,7 @@ echo "https://strogino:very_secret_token@github.com" >> ~/git-credentials
 ```
 cd
 git clone https://github.com/allseenn/zoo.git
-./zoo/bash/docker.sh
+./zoo/docker/docker.sh
 ```
 После развертывания контейнера в среде docker swarm можно подключиться к нему по ssh c паролем root: Test123
 Т.к. у нас проброшена папка репозитория внутрь контейнера то мы можем вносить изменения от имени разработчика strogino и создавать пулл-реквесты.
@@ -82,8 +82,8 @@ git clone https://github.com/allseenn/zoo.git
 В домашнюю директорию проброшена папка zoo, перейдем в нее и запустим скрипт, который примет приглашение от тимлида
 
 ```
-cd zoo/bash
-./accept.sh
+cd 
+./zoo/git/accept.sh
 ```
 
 так же создастся ветка для разаработки dev
