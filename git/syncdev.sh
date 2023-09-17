@@ -4,4 +4,4 @@ git checkout main
 git pull
 git checkout dev
 git merge main
-git push origin branchName
+git push
