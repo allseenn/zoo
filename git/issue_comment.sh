@@ -13,7 +13,6 @@ if [ $# -ge 3 ]; then
 else
     PAT=$(cat ~/.git-credentials | awk -F":" '{ print $3}' | sed 's/@github.com//')
     USERNAME=$(cat ~/.git-credentials | awk -F":" '{ print $2}' | sed  's/\///g')
-    ISSUE="1"
 fi
 
 curl -X POST \

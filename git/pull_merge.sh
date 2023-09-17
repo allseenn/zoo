@@ -14,7 +14,6 @@ if [ $# -ge 4 ]; then
 else
     PAT=$(cat ~/.git-credentials | awk -F":" '{ print $3}' | sed 's/@github.com//')
     USERNAME=$(cat ~/.git-credentials | awk -F":" '{ print $2}' | sed  's/\///g')
-    PULL="2"
 fi
 
 curl -L -X PUT \
