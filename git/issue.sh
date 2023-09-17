@@ -4,7 +4,7 @@ TITLE=$2
 BODY=$3
 
 
-if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ] || [ "$*" == "" ]; then
+if [ $# -eq 0 ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ] || [ "$*" == "" ]; then
     echo "Формат ввода: issue.sh collaborator 'title' 'body' [username]"
     exit 1;
 fi

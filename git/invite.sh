@@ -4,7 +4,7 @@
 REPONAME=$(basename "$PWD")
 COLLABNAME=$1
 
-if [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ] || [ "$*" == "" ]; then
+if [ $# -eq 0 ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ] || [ "$*" == "" ]; then
     echo "Формат ввода: invite.sh collaborator [username]"
     exit 1;
 fi
