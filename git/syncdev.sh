@@ -5,3 +5,4 @@ git pull
 git checkout dev
 git merge main
 git push
+git branch
