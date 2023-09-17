@@ -3,7 +3,7 @@ BODY=$1
 ISSUE=$2
 
 if [ $# -eq 0 ] || [ "$1" == "-help" ] || [ "$1" == "help" ] || [ "$1" == "-h" ]|| [ "$1" == "h" ]; then
-    echo "Формат ввода: issue_comment.sh 'body' [issue_number] [username]"
+    echo "Формат ввода: issue_comment.sh 'body' issue_number [username]"
     exit 1;
 fi
 

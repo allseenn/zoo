@@ -1,5 +1,5 @@
 REPONAME=$(basename "$PWD")
-COLLABNAME=$1
+# COLLABNAME=$1
 TITLE=$1
 BODY=$2
 
