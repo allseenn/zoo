@@ -1,0 +1,19 @@
+# Python
+*.pyc
+__pycache__/
+venv/
+.env
+/.vscode
+
+# Java
+*.class
+*.jar
+/target/
+.idea/
+
+# MySQL
+*.sql
+*.db
+*.dump
+/db/
+
