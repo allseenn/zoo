@@ -12,7 +12,6 @@ venv/
 .idea/
 
 # MySQL
-*.sql
 *.db
 *.dump
 /db/
