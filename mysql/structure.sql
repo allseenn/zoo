@@ -6,11 +6,6 @@ CREATE TABLE IF NOT EXISTS `Команды` (
   `command` VARCHAR(255) NOT NULL
 );
 
--- Вставляем команды
-INSERT INTO `Команды` (`command`) VALUES
-  ('сидеть'), ('стоять'), ('лежать'), ('беги'), ('иди'), ('прыгай'), 
-  ('танцуй'), ('лапу'), ('фас'), ('голос'), ('ищи'), ('плюй');
-
 -- Создаем таблицу "Домашние животные"
 CREATE TABLE IF NOT EXISTS `Домашние животные` (
   `id` INT AUTO_INCREMENT PRIMARY KEY,
