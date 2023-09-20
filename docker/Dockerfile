@@ -4,7 +4,8 @@ LABEL maintainer="Romashin Rostislav"
 LABEL hostname="strogino"
 
 RUN apt-get update && \
-    apt-get install -y openssh-server vim git curl wget python3.10-venv gnupg && \
+    apt-get install -y openssh-server vim git curl wget python3.10-venv gnupg locales && \
+    locale-gen ru_RU.UTF-8 && \
     mkdir /var/run/sshd && \
     chmod 755 /var/run/sshd && \ 
     rm -rf /var/lib/apt/lists/*     
