@@ -1,0 +1,6 @@
+[client]
+user=root
+password=Test123
+[mysqld]
+user=root
+skip-grant-tables

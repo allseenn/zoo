@@ -8,21 +8,21 @@ mysql -uroot -e "SHOW DATABASES;"
 echo '8. Создать таблицы с иерархией из диаграммы в БД'
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
 
-mysql -uroot < structure.sql
+mysql -uroot < ~/zoo/mysql/structure.sql
 mysql -uroot -e "SHOW CREATE DATABASE \`Друзья человека\`;"
 
 echo "Структура создана"
 echo "9.Заполнить низкоуровневые таблицы именами(животных), командами которые они выполняют и датами рождения"
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
 
-mysql -uroot < data.sql
+mysql -uroot < ~/zoo/mysql/data.sql
 mysql -uroot -e "USE \`Друзья человека\`; SHOW TABLES;"
 
 echo "База наполенна данными"
 echo "10. Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу."
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
 
-mysql -uroot < equus.sql
+mysql -uroot < ~/zoo/mysql/equus.sql
 mysql -uroot -e "USE \`Друзья человека\`; SHOW TABLES;"
 
 echo "Таблица верблюдов почищена, лошади и ослы объеденены в таблицу непарнокопытные."
@@ -30,14 +30,14 @@ echo "11.Создать новую таблицу “молодые животн
 но младше 3 лет и в отдельном столбце с точностью до месяца подсчитать возраст животных в новой таблице"
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
 
-mysql -uroot < young.sql
+mysql -uroot < ~/zoo/mysql/young.sql
 mysql -uroot -e "USE \`Друзья человека\`; SHOW TABLES; SELECT * FROM \`молодые животные\`"
 
 echo "Таблица с молодыми животными от года до трех лет создана"
 echo "12. Объединить все таблицы в одну, при этом сохраняя поля, указывающие на прошлую принадлежность к старым таблицам."
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
 
-mysql -uroot < animals.sql
+mysql -uroot < ~/zoo/mysql/animals.sql
 mysql -uroot -e "USE \`Друзья человека\`; SELECT * FROM animals; SHOW TABLES;"
 
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 3
