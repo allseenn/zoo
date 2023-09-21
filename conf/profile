@@ -1,0 +1,16 @@
+# ~/.profile: executed by Bourne-compatible login shells.
+
+if [ "$BASH" ]; then
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+fi
+
+mesg n 2> /dev/null || true
+clear
+echo "Вы успешно подключились к docker-контейнеру. Оснавная система не будет затронута"
+echo "После нажатия клавиши Enter запустится скрипт контрольной работы внутри контейнера."
+echo "После Enter появится меню, в котором выбирите пункт 5 или 6 по желанию"
+read -p "Для продолжения нажмите Enter"
+cd ~/zoo && ./start.sh
+
