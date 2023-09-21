@@ -1,7 +1,8 @@
 #!/bin/bash
 # Проверка наличия аргументов (имя стека и advertise-addr)
 if [ $# -ne 2 ]; then
-  echo "Использование: $0 <имя_стека> <advertise-addr>"
+  echo "На вход узкадать желаемое имя службы, и ай-пи сетевой карты, через которую будем коннектиться по ssh"
+  echo "Пример: $0 strogino 192.168.1.123"
   exit 1
 fi
 
@@ -16,7 +17,6 @@ cd "$(dirname "$0")/../docker/"
 
 docker build -t strogino:ssh -f Dockerfile .
 
-
 # Инициализируем Docker Swarm с указанным advertise-addr (если еще не инициализирован)
 if ! docker info | grep -q "Swarm: active"; then
     docker swarm init --advertise-addr "$advertise_addr"
@@ -25,4 +25,8 @@ fi
 # Развертываем службы из docker-compose.yml с указанным именем стека
 docker stack deploy -c docker-compose.yml "$stack_name"
 
-echo "Служба '$stack_name' была развернута в Docker Swarm и настроена на перезапуск, кроме случаев явной остановки."
+echo "Служба '$stack_name' была развернута в Docker Swarm и настроена."
+echo "Для соединение с контейнером используете пароль Test123 и root@$2 -p 222"
+echo "После входа в контейнер по ssh запустить данный скрипт cd /root/zoo && ./start.sh"
+read -p "Нажми Enter для возврата"
+
