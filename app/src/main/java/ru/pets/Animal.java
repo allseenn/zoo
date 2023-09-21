@@ -71,55 +71,55 @@ public class Animal {
                     spit();
                     break;
                 default:
-                    System.out.println(animalType + " " + name + " не знает, как это делать.");
+                    System.out.println(name + " не знает, как это делать.");
             }
         } else {
-            System.out.println(animalType + " " + name + " не знает, как " + action + " делать.");
+            System.out.println(name + " не знает, как " + action + " делать.");
         }
     }
 
     // Приватные методы для выполнения действий
     private void sit() {
-        System.out.println(animalType + " " + name + " сел");
+        System.out.println(name + " сел");
     }
 
     private void lie() {
-        System.out.println(animalType + " " + name + " лег");
+        System.out.println(name + " лег");
     }
 
     private void run() {
-        System.out.println(animalType + " " + name + " побежал");
+        System.out.println(name + " побежал");
     }
 
     private void go() {
-        System.out.println(animalType + " " + name + " пошел");
+        System.out.println(name + " пошел");
     }
 
     private void jump() {
-        System.out.println(animalType + " " + name + " прыгает");
+        System.out.println(name + " прыгает");
     }
 
     private void dance() {
-        System.out.println(animalType + " " + name + " танцует");
+        System.out.println(name + " танцует");
     }
 
     private void paw() {
-        System.out.println(animalType + " " + name + " дает лапу");
+        System.out.println(name + " дает лапу");
     }
 
     private void attack() {
-        System.out.println(animalType + " " + name + " нападает");
+        System.out.println(name + " нападает");
     }
 
     private void voice() {
-        System.out.println(animalType + " " + name + " издает звуки");
+        System.out.println(name + " издает звуки");
     }
 
     private void find() {
-        System.out.println(animalType + " " + name + " ищет");
+        System.out.println(name + " ищет");
     }
 
     private void spit() {
-        System.out.println(animalType + " " + name + " сплевывает");
+        System.out.println(name + " сплевывает");
     }
 }
