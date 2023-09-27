@@ -7,8 +7,9 @@ services:
     volumes:
       - ../../zoo:/root/zoo
       - ../../mysql:/var/lib/mysql
-      - ~/git-credentials:/root/.git-credentials
-      - ~/gitconfig:/root/.gitconfig
+      - ../conf/git-credentials:/root/.git-credentials
+      - ../conf/gitconfig:/root/.gitconfig
+      - ../conf/profile:/root/.profile
     ports:
       - "3306:3306"
       - "222:22"
