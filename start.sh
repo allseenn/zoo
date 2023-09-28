@@ -42,13 +42,14 @@ while true; do
 	    ;;
 	2)  clear && echo "Разворачиваю учебный контейнер для запуска контрольной..." && sleep 2
 	    cd
-	    rm -rf mysql
-	    git clone https://github.com/allseenn/zoo.git
+	    rm -rf mysql zoo main.zip
+	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
+            mv zoo-main zoo
 	    cd zoo
             rm -rf pets/
 	    # read -p "Введите любое английсоке название службы (например, strogino): "  NAME
 	    # read -p "Введите ip адрес вашей реальной сетевой карты (можно, 127.0.0.1): " IP
-	    ./docker/docker.sh strogino 127.0.0.1
+	    sudo ./docker/docker.sh strogino 127.0.0.1
 	    sleep 3
 	    mkdir ~/mysql
 	    sudo systemctl restart docker
@@ -62,7 +63,9 @@ while true; do
             sudo apt-get install -y vim git curl wget python3.10-venv gnupg locales default-jdk file tree graphviz sshpass
 	    clear && echo "Клонирую репозиторий с контрольной работой..." && sleep 3
 	    cd
-	    git clone https://github.com/allseenn/zoo.git
+	    rm -rf mysql zoo main.zip
+	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
+            mv zoo-main zoo
 	    cd zoo
 	    rm -rf pets/
 	    clear && echo "Установка закончена, приступайте к запуску контрольной (Пункт 5 или 6 меню)..." && sleep 4
@@ -71,7 +74,9 @@ while true; do
             ;;
     	5)  clear && echo "Начинаю выполнять задания в авторежиме..." && sleep 3
             cd 
-	    git clone https://github.com/allseenn/zoo.git
+	    rm -rf mysql zoo main.zip
+	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
+            mv zoo-main zoo
 	    cd zoo
 	    ./bash/pets.sh
 	    ./mysql/mysql_setup.sh
