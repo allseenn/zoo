@@ -1,8 +1,8 @@
 #!/bin/bash
 echo "13.Создать класс с Инкапсуляцией методов и наследованием по диаграмме."
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
-
-javac ./Animal.java
+cd class
+javac Animal.java
 file Animal.class
 
 echo "Супер-класс с инкапсуляцией навыков и данных о животном создан"
