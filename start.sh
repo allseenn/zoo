@@ -66,6 +66,7 @@ while true; do
 	    clear && echo "Установка закончена, приступайте к запуску контрольной (Пункт 5 или 6 меню)..." && sleep 4
 	    ./start.sh &
 	    exit
+            ;;
     	5)  clear && echo "Начинаю выполнять задания в авторежиме..." && sleep 3
             cd 
 	    git clone https://github.com/allseenn/zoo.git
