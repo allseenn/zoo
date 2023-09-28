@@ -54,7 +54,7 @@ while true; do
 	    sleep 3
 	    mkdir ~/mysql
 	    sudo systemctl restart docker
-	    sleep 7
+	    sleep 10
 	    sshpass -pTest123 ssh root@localhost -p 222 -o StrictHostKeyChecking=no
 	    ;;
     	3)  clear && echo "Подключение к развернотому контейнеру"
