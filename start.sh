@@ -44,6 +44,7 @@ while true; do
 	    cd
 	    rm -rf mysql zoo main.zip
 	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
+            unzip main.zip
             mv zoo-main zoo
 	    cd zoo
             rm -rf pets/
@@ -65,6 +66,7 @@ while true; do
 	    cd
 	    rm -rf mysql zoo main.zip
 	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
+            unzip main.zip
             mv zoo-main zoo
 	    cd zoo
 	    rm -rf pets/
@@ -76,6 +78,7 @@ while true; do
             cd 
 	    rm -rf mysql zoo main.zip
 	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
+            unzip main.zip
             mv zoo-main zoo
 	    cd zoo
 	    ./bash/pets.sh
