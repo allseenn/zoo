@@ -36,7 +36,9 @@ while true; do
   	    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 	    sudo apt-get update
 	    sudo apt-get -y install git docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-	    clear && echo "Настройка и запуск контейнера docker..." && sleep 2
+	    clear
+            echo "Настройка и запуск контейнера docker..."
+     	    sleep 2
 	    ;;
 	2)  clear && echo "Докер установлен! Выберите пункт 2.Развернуть контейнер..." && sleep 2
 	    cd
