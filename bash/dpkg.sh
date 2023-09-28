@@ -1,4 +1,5 @@
 #!/bin/bash
+clear
 echo "4.Задание: Установить и удалить deb-пакет с помощью dpkg."
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
 
@@ -10,6 +11,7 @@ cowsay "GeekBrains"
 
 echo "Удаляем приложение cowsay"
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
+clear
 dpkg -r cowsay
 dpkg -r libtext-charwidth-perl
 rm *.deb
@@ -17,8 +19,7 @@ rm *.deb
 echo "Удалена cowsay"
 echo "5.Задание: Выводим историю"
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
-
+clear
 history
 [ "$1" == "1" ] && (read -p "Нажмите Enter для продолжения") || sleep 2
-
-
+clear
