@@ -50,7 +50,7 @@ while true; do
             rm -rf pets/
 	    # read -p "Введите любое английсоке название службы (например, strogino): "  NAME
 	    # read -p "Введите ip адрес вашей реальной сетевой карты (можно, 127.0.0.1): " IP
-	    sudo ./docker/docker.sh strogino 127.0.0.1
+	    bash ./docker/docker.sh strogino 127.0.0.1
 	    sleep 3
 	    mkdir ~/mysql
 	    sudo systemctl restart docker
@@ -70,8 +70,9 @@ while true; do
             mv zoo-main zoo
 	    cd zoo
 	    rm -rf pets/
+            chmod 777 -r
 	    clear && echo "Установка закончена, приступайте к запуску контрольной (Пункт 5 или 6 меню)..." && sleep 4
-	    ./start.sh &
+	    bash start.sh &
 	    exit
             ;;
     	5)  clear && echo "Начинаю выполнять задания в авторежиме..." && sleep 3
@@ -81,23 +82,23 @@ while true; do
             unzip main.zip
             mv zoo-main zoo
 	    cd zoo
-	    ./bash/pets.sh
-	    ./mysql/mysql_setup.sh
-	    ./bash/dpkg.sh
-	    ./python/python.sh
-	    ./mysql/mysql_base.sh
-	    ./class/create.sh
-	    ./class/app.sh
+	    bash bash/pets.sh
+	    bash mysql/mysql_setup.sh
+	    bash bash/dpkg.sh
+	    bash python/python.sh
+	    bash mysql/mysql_base.sh
+	    bash class/create.sh
+	    bash class/app.sh
 	    clear
             ;;
         6)  clear && echo "Выполнение в ручном режиме с Enter..." && sleep 3
-            ./bash/pets.sh 1
-	    ./mysql/mysql_setup.sh 1
-	    ./bash/dpkg.sh 1
-	    ./python/python.sh 1
-	    ./mysql/mysql_base.sh 1
-	    ./class/create.sh 1
-	    ./class/app.sh 1
+            bash bash/pets.sh 1
+	    bash mysql/mysql_setup.sh 1
+	    bash bash/dpkg.sh 1
+	    bash python/python.sh 1
+	    bash mysql/mysql_base.sh 1
+	    bash class/create.sh 1
+	    bash class/app.sh 1
             ;;
         7)  clear
             less README.md
