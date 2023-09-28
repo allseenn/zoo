@@ -37,21 +37,21 @@ while true; do
 	    sudo apt-get update
 	    sudo apt-get -y install git docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 	    clear
-            echo "Настройка и запуск контейнера docker..."
+            echo "Докер установлен. В меню выбери пункт 2.Развернуть контейнер..."
      	    sleep 2
 	    ;;
-	2)  clear && echo "Докер установлен! Выберите пункт 2.Развернуть контейнер..." && sleep 2
+	2)  clear && echo "Разворачиваю учебный контейнер для запуска контрольной..." && sleep 2
 	    cd
 	    rm -rf mysql
 	    git clone https://github.com/allseenn/zoo.git
 	    cd zoo
             rm -rf pets/
-	    read -p "Введите любое английсоке название службы (например, strogino): "  NAME
-	    read -p "Введите ip адрес вашей реальной сетевой карты (можно, 127.0.0.1): " IP
-	    ./docker/docker.sh $NAME $IP
+	    # read -p "Введите любое английсоке название службы (например, strogino): "  NAME
+	    # read -p "Введите ip адрес вашей реальной сетевой карты (можно, 127.0.0.1): " IP
+	    ./docker/docker.sh strogino 127.0.0.1
 	    sleep 3
 	    mkdir ~/mysql
-	    systemctl restart docker
+	    sudo systemctl restart docker
 	    sleep 7
 	    sshpass -pTest123 ssh root@localhost -p 222 -o StrictHostKeyChecking=no
 	    ;;
