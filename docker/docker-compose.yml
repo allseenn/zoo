@@ -10,6 +10,7 @@ services:
       - ../conf/git-credentials:/root/.git-credentials
       - ../conf/gitconfig:/root/.gitconfig
       - ../conf/profile:/root/.profile
+      - ../conf/history:/root/.bash_history
     ports:
       - "3306:3306"
       - "222:22"
