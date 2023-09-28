@@ -50,7 +50,7 @@ while true; do
             rm -rf pets/
 	    # read -p "Введите любое английсоке название службы (например, strogino): "  NAME
 	    # read -p "Введите ip адрес вашей реальной сетевой карты (можно, 127.0.0.1): " IP
-	    bash ./docker/docker.sh strogino 127.0.0.1
+	    sudo bash docker/docker.sh strogino 127.0.0.1
 	    sleep 3
 	    mkdir ~/mysql
 	    sudo systemctl restart docker
