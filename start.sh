@@ -28,7 +28,7 @@ while true; do
         1)  clear && echo "Проверка и установка програмного обеспечения..." && sleep 3
             for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done    
 	    sudo apt-get update
-	    sudo apt-get -y install ca-certificates curl gnupg
+	    sudo apt-get -y install ca-certificates curl gnupg sshpass
 	    sudo install -m 0755 -d /etc/apt/keyrings
 	    curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg
 	    sudo chmod a+r /etc/apt/keyrings/docker.gpg
@@ -36,9 +36,9 @@ while true; do
   	    "$(. /etc/os-release && echo "$VERSION_CODENAME")" stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 	    sudo apt-get update
 	    sudo apt-get -y install git docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-	    clear
+	    clear && echo "Настройка и запуск контейнера docker..." && sleep 2
 	    ;;
-	2)  clear && echo "Настройка и запуск контейнера docker..." && sleep 2
+	2)  clear && echo "Докер установлен! Выберите пункт 2.Развернуть контейнер..." && sleep 2
 	    cd
 	    rm -rf mysql
 	    git clone https://github.com/allseenn/zoo.git
@@ -63,10 +63,9 @@ while true; do
 	    git clone https://github.com/allseenn/zoo.git
 	    cd zoo
 	    rm -rf pets/
-	    clear && echo "Установка закончена, приступайте к запуску контрольной (Пункт 2 ли 3 меню)..." && sleep 4
+	    clear && echo "Установка закончена, приступайте к запуску контрольной (Пункт 5 или 6 меню)..." && sleep 4
 	    ./start.sh &
 	    exit
-            ;;
     	5)  clear && echo "Начинаю выполнять задания в авторежиме..." && sleep 3
             cd 
 	    git clone https://github.com/allseenn/zoo.git
