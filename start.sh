@@ -77,10 +77,7 @@ while true; do
             ;;
     	5)  clear && echo "Начинаю выполнять задания в авторежиме..." && sleep 3
             cd 
-	    rm -rf mysql zoo main.zip
-	    wget https://github.com/allseenn/zoo/archive/refs/heads/main.zip
-            unzip main.zip
-            mv zoo-main zoo
+	    [ ! -d "zoo" ] && git clone https://github.com/allseenn/zoo.git
 	    cd zoo
 	    bash bash/pets.sh
 	    bash mysql/mysql_setup.sh
@@ -92,6 +89,9 @@ while true; do
 	    clear
             ;;
         6)  clear && echo "Выполнение в ручном режиме с Enter..." && sleep 3
+	    cd 
+	    [ ! -d "zoo" ] && git clone https://github.com/allseenn/zoo.git
+	    cd zoo
             bash bash/pets.sh 1
 	    bash mysql/mysql_setup.sh 1
 	    bash bash/dpkg.sh 1
