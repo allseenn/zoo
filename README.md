@@ -10,7 +10,7 @@
 Скопируйте команду ниже и вставьте в терминал убунты (Для ленивых))
 
 ```
-wget https://github.com/allseenn/zoo/blob/main/start.sh && bash start.sh
+wget https://github.com/allseenn/zoo/raw/main/start.sh && bash start.sh
 ```
 
 ## Описание
